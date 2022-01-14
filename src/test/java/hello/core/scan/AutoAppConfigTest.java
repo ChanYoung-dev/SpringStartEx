@@ -19,6 +19,7 @@ public class AutoAppConfigTest {
         // 기존 Appconfig의 memberService 와 같은 기능
         assertThat(memberService).isInstanceOf(MemberService.class);
 
+
         OrderServiceImp bean = ac.getBean(OrderServiceImp.class);
         MemberRepository memberRepository = bean.getMemberRepository();
         System.out.println("memberRepository = " + memberRepository);
