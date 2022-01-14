@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan
 public class OrderServiceImp implements OrderService {
     //감독은 역할에만 신경쓸수있고 실행하는 책임만 진다
-    private final MemberRepository memberRepository; //로미오 역할
+     private final MemberRepository memberRepository; //로미오 역할
     //private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
     private final DiscountPolicy discountPolicy; // 줄리엣 역할
 
