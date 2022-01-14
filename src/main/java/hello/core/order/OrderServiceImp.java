@@ -19,7 +19,7 @@ public class OrderServiceImp implements OrderService {
     // 또는 private final MemberRepository memberRepository = new MemoryMemberRepository로 바꿀수있
     // 그래서 수정자 주입이나 다른 주입방식은 final를 사용하면 안된다
 
-    @Autowired
+
     public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
