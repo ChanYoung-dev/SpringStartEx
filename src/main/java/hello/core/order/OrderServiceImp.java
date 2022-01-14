@@ -12,25 +12,19 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan
 public class OrderServiceImp implements OrderService {
     //감독은 역할에만 신경쓸수있고 실행하는 책임만 진다
-     private MemberRepository memberRepository; //로미오 역할
+     private final MemberRepository memberRepository; //로미오 역할
     //private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
-    private DiscountPolicy discountPolicy; // 줄리엣 역할
+    private final DiscountPolicy discountPolicy; // 줄리엣 역할
+    //final은 생성자에서만 값을 설정할수있고 그이후에는 못바꾼다.
+    // 또는 private final MemberRepository memberRepository = new MemoryMemberRepository로 바꿀수있
+    // 그래서 수정자 주입이나 다른 주입방식은 final를 사용하면 안된다
+
     @Autowired
-    public void setMemberRepository(MemberRepository memberRepository) {
+    public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
-    }
-    @Autowired
-    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
         this.discountPolicy = discountPolicy;
     }
 
-    /*
-            @Autowired
-            public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-                this.memberRepository = memberRepository;
-                this.discountPolicy = discountPolicy;
-            }
-            */
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
         Member member = memberRepository.findById(memberId);
