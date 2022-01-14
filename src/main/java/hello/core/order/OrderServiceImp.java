@@ -26,9 +26,9 @@ public class OrderServiceImp implements OrderService {
     자동으로 생성하기때문이다
     @Autowired // <- 생성자는 필요없다
     */
-    public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy rateDiscountPolicy) {
         this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
+        this.discountPolicy = rateDiscountPolicy;
     }
 
     @Override
