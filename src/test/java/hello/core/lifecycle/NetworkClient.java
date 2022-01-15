@@ -29,5 +29,17 @@ public class NetworkClient {
 
     }
 
-    
+
+
+    public void init() {
+        System.out.println("NetworkClient.init");
+        connect();
+        call("초기화 연결 메시지");
+    }
+
+
+    public void close() {
+        System.out.println("NetworkClient.close");
+        disconnect();
+    }
 }
