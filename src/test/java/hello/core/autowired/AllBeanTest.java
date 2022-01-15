@@ -28,6 +28,7 @@ public class AllBeanTest {
         private final Map<String, DiscountPolicy> policyMap;
         private  final List<DiscountPolicy> policies;
 
+        public DiscountService(Map<String, DiscountPolicy> policyMap, List<DiscountPolicy> policies) {
             this.policyMap = policyMap;
             this.policies = policies;
             System.out.println("policyMap = " + policyMap);
