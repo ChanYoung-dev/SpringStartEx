@@ -24,6 +24,7 @@ public class SingletonTest {
     }
 
     @Scope("singleton")
+    //singletonBeanFind()의 첫줄에서 파라미터로 singletonBean.class를 넣으면 해당 클래스를 자동으로 컴포넌트스캔 대상자로 인식
     static class SingletonBean{
         @PostConstruct
         public void init(){
