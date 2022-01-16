@@ -21,7 +21,9 @@ public class LogDemonController {
     @ResponseBody
     public String logDemo(HttpServletRequest request){
         String requestURL = request.getRequestURL().toString();
-        myLogger.setRequestURL(requestURL);
+        System.out.println("myLogger = " + myLogger.getClass()); //가짜 myLogger
+        myLogger.setRequestURL(requestURL); // 진짜 myLogger호출
+
 
         myLogger.log("controller test");
         logDemoService.logic("testId");
