@@ -9,7 +9,7 @@ import java.util.UUID;
 
 //로그 출력을 위한 클래스
 @Component
-@Scope("value = request")
+@Scope(value = "request")
 public class MyLogger {
 
     private String uuid;
