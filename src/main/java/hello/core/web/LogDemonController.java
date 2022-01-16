@@ -15,13 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 public class LogDemonController {
 
     private final LogDemonService logDemoService;
-    private final ObjectProvider<MyLogger> myLoggerProvider;
+    private final MyLogger myLogger;
 
     @RequestMapping("log-demo")
     @ResponseBody
     public String logDemo(HttpServletRequest request){
         String requestURL = request.getRequestURL().toString();
-        MyLogger myLogger = myLoggerProvider.getObject(); //request가 들어올때 Mylogger클래스가 생성된다
         myLogger.setRequestURL(requestURL);
 
         myLogger.log("controller test");
